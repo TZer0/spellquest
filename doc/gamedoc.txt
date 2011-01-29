@@ -1,0 +1,10 @@
+Action-RPG with slow-mo pause. Diablo 2 cam. Doppelgängers!
+Finite story, infinite roaming
+
+Spellscards:
+Projectile: bolts
+Environment: AoE
+Effect/Hex (extreme)
+
+Other:
+Enchantment
