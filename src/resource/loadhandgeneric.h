@@ -14,7 +14,7 @@ class GenericLoadHandler
 	public:
 		virtual void load()=0;
 		virtual void unload()=0;
-		
+
 	private:
 		
 };

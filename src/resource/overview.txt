@@ -1,0 +1,9 @@
+resource.h
+Provides an interface for loading, unloading and fetching of resources from the
+hard-drive. Possible to extend to other providers of resources.
+
+loadhandgeneric.h
+Defines a interface a loading handler shall implement.
+
+Loadhandall.h
+

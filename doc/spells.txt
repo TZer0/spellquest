@@ -1,0 +1,45 @@
+== Spells ==
+Utilities/actions caused by the player.
+
+Definitions:
+	Spells: Permanent/learned spell type (also refers to any abilities).
+	Spell cards: Limited-use spell type
+	Spell pack: The collection of spells and spell cards an entity (like a doppleganger) has.
+	
+	Spell effect: Component of a spell type, causes a quite specific effect. A spell effect is based on a specific spell class.
+	Spell type: Combination of spell effects (from a specific spell class). Any permanent spell or spell card can cast a single spell type.
+	Spell modifier: A plugin which is attached to a spell (but not spell cards) which modifies the behavior of the spell.
+	Spell class: A specific pack of spell effects with similar behaviour.
+	
+	Casting: Using a spell or spell card, which causes an effect on the world.
+	Magic: All spell types. Or refers to the spell pack in some instances.
+
+== Spell classes ==
+Spell classes are characterised by how they're casted, and their basic behaviour.
+
+Projectile:
+	Spells which fire projectiles in a specific direction.
+
+Environment:
+	Spells which affect the environment, casted by targeting a specific position or a specific world object.
+
+Enhancements:
+	Spells which affect a target entity, casted by targetting an entity, then possible
+	additional targets (which may be either other entities or environment, specified
+	by the spell definition).
+
+== Spell modifiers ==
+Spell modifiers alter the behaviour of a spell. By attaching spell modifiers to spells, they change their behaviour. Spell modifiers are restricted
+to a specific spell class, thus a projectile-class modifier can not be used on an environment-class spell.
+
+NOTE: It might be advantageous to have subclasses of the major spell classes, and modifiers only have an effect on these subclasses.
+Examples are to restrict spell modifiers to environment spells that set out a fire-circle with a specific radius.
+If the modifier has the ability to enlarge this circle. Another solution to this is that spell modifiers alters a spell in more than one way,
+but incompatible spell effects are unchanged.
+
+== Spell effects ==
+Projectile effects:
+	
+
+== Unresolved questions ==
+- When a doppleganger is forcefully unsummoned, will the player have the opportunity to cast any magic that the doppleganger had?
