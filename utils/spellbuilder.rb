@@ -2,22 +2,26 @@ require 'rexml/document'
 include REXML
 
 class GenericNameHolder
+	attr_accessor :name
 	def initialize(name)
 		@name = name
 	end
 end
 
 class Spell < GenericNameHolder
-	attr_accessor :name, :fire, :ice
+	attr_accessor :fire, :ice
 end
 
 class Branch < GenericNameHolder
+	attr_accessor :cooldown
 end
 
 class Tree < GenericNameHolder
+	attr_accessor :branch1, :branch2, :branch3, :branch4
 end
 
 class Modifier < GenericNameHolder
+	attr_accessor, :cooldown, :fire, :ice
 end
 
 @types = ["spell", "branch", "tree", "modifier"]
@@ -156,6 +160,29 @@ while true
 		end
 		if (not found)
 			puts "Could not find"
+		end
+	elsif (input.downcase.slice("new"))
+		if i != -1
+			t = input.split(" ")
+			t2 = input.split("\"")
+			allinfo[i].push(@classes[i].new(t2[1]))
+			type = i
+			selected = allinfo[i].length-1
+		end
+	elsif (input.downcase.slice("set"))
+		if (selected != -1 and type != -1)
+			t = input.downcase.split(" ")
+			value = t[2]
+			if t[2] == "nil" or t[2] == "0"
+				value = nil
+			end
+			begin
+				allinfo[type][selected].instance_variable_set("@"+t[1], value.to_s)
+			rescue
+				puts "Invalid variable-name"	
+			end
+		else
+			puts "No item selected"
 		end
 	end
 end
