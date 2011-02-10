@@ -1,15 +1,1 @@
-<magicdata>
-  <spells>
-     <spell>
-       <name>fireball</name>
-       <fire>3</fire>
-     </spell>
-     <spell>
-       <ice>3</ice>
-       <name>icebolt</name>
-     </spell>
-  </spells>
-<branches/>
-<trees/>
-<modifiers/>
-</magicdata>
+<magicdata><spell id='fireball'><fire>3</fire></spell><spell id='icebolt'><ice>3</ice></spell></magicdata>
